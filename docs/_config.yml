@@ -1,0 +1,25 @@
+title: "Football Prediction Project"
+description: "ELO-based Match Predictor and Player Comparison using Data Science"
+author: "Tue Khang"
+theme: minima
+
+# Enable Markdown posts from _posts
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Where your posts live
+collections:
+  posts:
+    output: true
+
+# Site URL (for SEO + sharing)
+url: "https://tuekhang1511.github.io"
+baseurl: ""  # keep this empty if publishing to main domain
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Social links (optional)
+github_username: tuekhang1511
