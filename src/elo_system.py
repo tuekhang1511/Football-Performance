@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import data_prep as dp
+import time
 
 # Load data from fbref.com
 pl = pd.read_html('https://fbref.com/en/comps/9/schedule/Premier-League-Scores-and-Fixtures', 
@@ -21,6 +22,81 @@ l1 = pd.read_html('https://fbref.com/en/comps/13/schedule/Ligue-1-Scores-and-Fix
 ucl = pd.read_html('https://fbref.com/en/comps/8/schedule/Champions-League-Scores-and-Fixtures', 
                   attrs={"id":"sched_all"})[0]
 
+uel = pd.read_html('https://fbref.com/en/comps/19/schedule/Europa-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_all"})[0]
+
+time.sleep(30)
+
+pl1 = pd.read_html('https://fbref.com/en/comps/9/2023-2024/schedule/2023-2024-Premier-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2023-2024_9_1"})[0]
+
+llg1 = pd.read_html('https://fbref.com/en/comps/12/2023-2024/schedule/2023-2024-La-Liga-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2023-2024_12_1"})[0]
+
+sra1 = pd.read_html('https://fbref.com/en/comps/11/2023-2024/schedule/2023-2024-Serie-A-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2023-2024_11_1"})[0]
+
+bdlg1 = pd.read_html('https://fbref.com/en/comps/20/2023-2024/schedule/2023-2024-Bundesliga-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2023-2024_20_1"})[0]
+
+l11 = pd.read_html('https://fbref.com/en/comps/13/2023-2024/schedule/2023-2024-Ligue-1-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2023-2024_13_1"})[0]
+
+ucl1 = pd.read_html('https://fbref.com/en/comps/8/2023-2024/schedule/2023-2024-Champions-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_all"})[0]
+
+uel1 = pd.read_html('https://fbref.com/en/comps/19/2023-2024/schedule/2023-2024-Europa-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_all"})[0]
+
+time.sleep(30)
+
+pl2 = pd.read_html('https://fbref.com/en/comps/9/2022-2023/schedule/2022-2023-Premier-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2022-2023_9_1"})[0]
+
+llg2 = pd.read_html('https://fbref.com/en/comps/12/2022-2023/schedule/2022-2023-La-Liga-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2022-2023_12_1"})[0]
+
+sra2 = pd.read_html('https://fbref.com/en/comps/11/2022-2023/schedule/2022-2023-Serie-A-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2022-2023_11_1"})[0]
+
+bdlg2 = pd.read_html('https://fbref.com/en/comps/20/2022-2023/schedule/2022-2023-Bundesliga-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2022-2023_20_1"})[0]
+
+l12 = pd.read_html('https://fbref.com/en/comps/13/2022-2023/schedule/2022-2023-Ligue-1-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2022-2023_13_1"})[0]
+
+ucl2 = pd.read_html('https://fbref.com/en/comps/8/2022-2023/schedule/2022-2023-Champions-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_all"})[0]
+
+uel2 = pd.read_html('https://fbref.com/en/comps/19/2022-2023/schedule/2022-2023-Europa-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_all"})[0]
+
+time.sleep(30)
+
+pl3 = pd.read_html('https://fbref.com/en/comps/9/2021-2022/schedule/22021-2022-Premier-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2021-2022_9_1"})[0]
+
+llg3 = pd.read_html('https://fbref.com/en/comps/12/2021-2022/schedule/2021-2022-La-Liga-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2021-2022_12_1"})[0]
+
+sra3 = pd.read_html('https://fbref.com/en/comps/11/2021-2022/schedule/2021-2022-Serie-A-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2021-2022_11_1"})[0]
+
+bdlg3 = pd.read_html('https://fbref.com/en/comps/20/2021-2022/schedule/2021-2022-Bundesliga-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2021-2022_20_1"})[0]
+
+l13 = pd.read_html('https://fbref.com/en/comps/13/2021-2022/schedule/2021-2022-Ligue-1-Scores-and-Fixtures', 
+                  attrs={"id":"sched_2021-2022_13_1"})[0]
+
+ucl3 = pd.read_html('https://fbref.com/en/comps/8/2021-2022/schedule/2021-2022-Champions-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_all"})[0]
+
+uel3 = pd.read_html('https://fbref.com/en/comps/19/2021-2022/schedule/2021-2022-Europa-League-Scores-and-Fixtures', 
+                  attrs={"id":"sched_all"})[0]
+
+time.sleep(30)
+
+
 # Apply the clean_data function to each league
 pl_teams, pl = dp.clean_data(pl)
 pl['League'] = 'Premier League'
@@ -40,10 +116,78 @@ l1['League'] = 'Ligue 1'
 ucl_teams, ucl = dp.clean_data(ucl)
 ucl['League'] = 'Champions League'
 
-# Concatenate all leagues into one, sorted by Date
-all_teams = np.unique(np.concatenate([pl_teams, llg_teams, sra_teams, bdlg_teams, l1_teams, ucl_teams]))
+uel_teams, uel = dp.clean_data(uel)
+uel['League'] = 'Europa League'
 
-all_leagues = pd.concat([pl, llg, sra, bdlg, l1, ucl], ignore_index=True)
+pl1_teams, pl1 = dp.clean_data(pl1)
+pl1['League'] = 'Premier League'
+
+llg1_teams, llg1 = dp.clean_data(llg1)
+llg1['League'] = 'La Liga'
+
+sra1_teams, sra1 = dp.clean_data(sra1)
+sra1['League'] = 'Serie A'
+
+bdlg1_teams, bdlg1 = dp.clean_data(bdlg1)
+bdlg1['League'] = 'Bundesliga'
+
+l11_teams, l11 = dp.clean_data(l11)
+l11['League'] = 'Ligue 1'
+
+ucl1_teams, ucl1 = dp.clean_data(ucl1)
+ucl1['League'] = 'Champions League'
+
+uel1_teams, uel1 = dp.clean_data(uel1)
+uel1['League'] = 'Europa League'
+
+pl2_teams, pl2 = dp.clean_data(pl2)
+pl2['League'] = 'Premier League'
+
+llg2_teams, llg2 = dp.clean_data(llg2)
+llg2['League'] = 'La Liga'
+
+sra2_teams, sra2 = dp.clean_data(sra2)
+sra2['League'] = 'Serie A'
+
+bdlg2_teams, bdlg2 = dp.clean_data(bdlg2)
+bdlg2['League'] = 'Bundesliga'
+
+l12_teams, l12 = dp.clean_data(l12)
+l12['League'] = 'Ligue 1'
+
+ucl2_teams, ucl2 = dp.clean_data(ucl2)
+ucl2['League'] = 'Champions League'
+
+uel2_teams, uel2 = dp.clean_data(uel2)
+uel2['League'] = 'Europa League'
+
+pl3_teams, pl3 = dp.clean_data(pl3)
+pl3['League'] = 'Premier League'
+
+llg3_teams, llg3 = dp.clean_data(llg3)
+llg3['League'] = 'La Liga'
+
+sra3_teams, sra3 = dp.clean_data(sra3)
+sra3['League'] = 'Serie A'
+
+bdlg3_teams, bdlg3 = dp.clean_data(bdlg3)
+bdlg3['League'] = 'Bundesliga'
+
+l13_teams, l13 = dp.clean_data(l13)
+l13['League'] = 'Ligue 1'
+
+ucl3_teams, ucl3 = dp.clean_data(ucl3)
+ucl3['League'] = 'Champions League'
+
+uel3_teams, uel3 = dp.clean_data(uel3)
+uel3['League'] = 'Europa League'
+
+# Concatenate all leagues into one, sorted by Date
+all_leagues = pd.concat([pl, llg, sra, bdlg, l1, ucl, uel,
+                         pl1, llg1, sra1, bdlg1, l11, ucl1, uel1,
+                         pl2, llg2, sra2, bdlg2, l12, ucl2, uel2,
+                         pl3, llg3, sra3, bdlg3, l13, ucl3, uel3
+                        ], ignore_index=True)
 
 all_leagues = all_leagues.sort_values('Date')
 
@@ -88,6 +232,9 @@ def update_elo(ratings, df, home_bonus=20, k_factor=24):
         league = row['League']
         attendance = row['Attendance']
         update_elo_match(home, away, result, league, attendance, df, ratings, home_bonus=home_bonus, k_factor=k_factor)
+
+# Generating all teams
+all_teams = set(all_leagues['Home']).union(all_leagues['Away'])
 
 # Intializing elo ratings
 all_ratings = intial_ratings(all_teams)
